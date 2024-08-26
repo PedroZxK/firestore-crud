@@ -1,36 +1,45 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const PaginaPrincipal = ({ navigation }) => {
     return (
-        <ImageBackground
-            source={require('../casa.png')}
-            style={styles.backgroundImage}
-        >
-            <View style={styles.container}>
-                <Text style={styles.header}>Home</Text>
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => navigation.navigate('listarJogadores')}
-                >
-                    <Text style={styles.buttonText}>Listar Jogadores</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={[styles.button, styles.logoutButton]}
-                    onPress={() => navigation.navigate('realizarLogin')}
-                >
-                    <Text style={styles.buttonText}>Logout</Text>
-                </TouchableOpacity>
-            </View>
-        </ImageBackground>
+        <View style={styles.container}>
+            <Text style={styles.header}>Home</Text>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('listarJogadores')}
+            >
+                <Text style={styles.buttonText}>Listar Jogadores</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('adicionarJogadores')}
+            >
+                <Text style={styles.buttonText}>Adicionar Jogadores</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('editarPerfil')}
+            >
+                <Text style={styles.buttonText}>Editar perfil</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('sobreNos')}
+            >
+                <Text style={styles.buttonText}>Sobre nós</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[styles.button, styles.logoutButton]}
+                onPress={() => navigation.navigate('realizarLogin')}
+            >
+                <Text style={styles.buttonText}>Logout</Text>
+            </TouchableOpacity>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    backgroundImage: {
-        flex: 1,
-        resizeMode: 'cover',
-    },
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -39,7 +48,7 @@ const styles = StyleSheet.create({
     },
     header: {
         fontSize: 24,
-        color: '#fff',
+        color: '#000',
         fontWeight: 'bold',
         marginBottom: 20,
         textAlign: 'center',
